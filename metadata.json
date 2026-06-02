@@ -1,0 +1,6 @@
+{
+  "name": "FlexMart",
+  "description": "A high-fidelity premium eCommerce store inspired by WooCommerce and Shopify, featuring rich interactive product browsing, filtering, real-time checkout, order tracking, and live user feedback.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

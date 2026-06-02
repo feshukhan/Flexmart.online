@@ -1,0 +1,223 @@
+/*
+ * FlexMart Premium Aesthetic Stylesheet
+ * Brand Coordinates: Elegant Deep Blue (#08152c) and Sunset Orange Accent (#FF7A00)
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom Brand Palette Extensions */
+  --color-brand-primary: #FF7A00;
+  --color-brand-hover: #E06B00;
+  --color-brand-bg-dark: #08152c;
+  --color-brand-card-dark: #0B1E40;
+}
+
+/* ==========================================================================
+   Custom Global Core Elements
+   ========================================================================== */
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fafbfd;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-primary);
+}
+
+/* Selection highlight color */
+::selection {
+  background-color: rgba(255, 122, 0, 0.15);
+  color: #d95e00;
+}
+
+/* ==========================================================================
+   Micro Animation Framework for High-Conversion Visual Flow
+   ========================================================================== */
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes selectScale {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slowGlowPulse {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 122, 0, 0.2);
+  }
+  55% {
+    box-shadow: 0 0 24px rgba(255, 122, 0, 0.45);
+  }
+}
+
+.animate-slide-down {
+  animation: slideDown 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideRight 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-scale {
+  animation: selectScale 0.28s ease-out forwards;
+}
+
+.animate-glow-pulse {
+  animation: slowGlowPulse 3s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   FlexMart High-End Design System Utility Classes
+   ========================================================================== */
+
+/* Brand Card styling: subtle borders with state transitions */
+.flexmart-card {
+  background: #ffffff;
+  border: 1px solid rgba(241, 245, 249, 0.9);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.015), 0 1px 2px rgba(15, 23, 42, 0.005);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1rem;
+}
+
+.flexmart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.04), 0 2px 6px rgba(15, 23, 42, 0.01);
+  border-color: rgba(226, 232, 240, 0.8);
+}
+
+/* Premium High-Conversion Orange Buttons */
+.btn-primary-action {
+  background-color: var(--color-brand-primary);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(255, 122, 0, 0.2);
+}
+
+.btn-primary-action:hover {
+  background-color: var(--color-brand-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 122, 0, 0.35);
+}
+
+.btn-primary-action:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(255, 122, 0, 0.15);
+}
+
+/* Secondary Sleek Luxury Buttons */
+.btn-secondary-action {
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1.5px solid #e2e8f0;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-action:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
+}
+
+/* Glassmorphism accents for high performance styling overlays */
+.glass-overlay-dark {
+  background: rgba(8, 21, 44, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-overlay-light {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(241, 245, 249, 0.6);
+}
+
+/* Beautiful custom badges */
+.badge-orange-glow {
+  background-color: rgba(255, 122, 0, 0.08);
+  color: #e06b00;
+  border: 1px solid rgba(255, 122, 0, 0.18);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Smooth Image zoom transition classes */
+.image-zoom-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-zoom-container img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.06);
+}
